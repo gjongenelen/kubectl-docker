@@ -13,9 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag kubectl:$(date +%s)
-    - name: 'Build:dockerimage'
-      uses: docker/build-push-action@v1
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build and push
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: true
+        tags: gjongenelen/kubectl-docker:latest
 

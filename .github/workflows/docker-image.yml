@@ -27,5 +27,5 @@ jobs:
         registry: ghcr.io
         context: .
         push: true
-        tags: gjongenelen/kubectl-docker:latest
+        tags: ghcr.io/gjongenelen/kubectl-docker:latest
 
